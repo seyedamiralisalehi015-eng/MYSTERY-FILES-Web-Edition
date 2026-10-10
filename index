@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MYSTERY FILES | پرونده‌های مرموز</title>
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<header class="top">
+  <div class="logo">MYSTERY FILES <span style="color:#edf2ff">/ پرونده‌های مرموز</span></div>
+  <div class="sub">تو کارآگاهی؛ هر انتخاب، یک سرنخ و گاهی یک پایان متفاوت 🔎</div>
+</header>
+<main class="wrap">
+  <div class="toolbar">
+    <div class="pill" id="statusPill">۳ پرونده آمادهٔ بررسی</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn" id="homeBtn" onclick="showHome()">📁 فهرست پرونده‌ها</button>
+      <button class="btn danger" onclick="resetAll()">↻ پاک‌کردن پیشرفت</button>
+    </div>
+  </div>
+  <section id="home">
+    <div style="margin:0 0 18px">
+      <h1 style="margin-bottom:7px">کدام پرونده را باز می‌کنی؟</h1>
+      <div class="muted">داستان‌ها مستقل‌اند. گزینه‌ها را بخوان، سرنخ‌ها را جمع کن و ببین انتخاب‌هایت تو را به کجا می‌رسانند.</div>
+    </div>
+    <div class="grid" id="caseGrid"></div>
+    <div class="notice">نسخهٔ آفلاین و تک‌فایلی است؛ برای بازی‌کردن اینترنت لازم نیست. داستان‌ها خیالی‌اند و برنامه به فایل‌های واقعی کامپیوترت دسترسی ندارد.</div>
+  </section>
+  <section id="game" class="game">
+    <div class="game-layout">
+      <article class="panel">
+        <div class="case-kicker" id="caseKicker"></div>
+        <h1 id="stageTitle"></h1>
+        <div class="story" id="storyText"></div>
+        <div class="terminal" id="terminal" style="display:none"></div>
+        <div class="options" id="options"></div>
+        <div class="footer-actions">
+          <button class="btn" onclick="showHome()">← برگشت به پرونده‌ها</button>
+          <button class="btn" onclick="restartCase()">↻ شروع دوبارهٔ این پرونده</button>
+        </div>
+      </article>
+      <aside class="panel">
+        <div class="side-block">
+          <div class="side-title">📌 وضعیت پرونده</div>
+          <div class="muted" id="sideCaseName"></div>
+          <div class="progress"><span id="progressBar"></span></div>
+          <div class="muted" id="progressText"></div>
+        </div>
+        <div class="side-block">
+          <div class="side-title">🧩 سرنخ‌های پیدا شده</div>
+          <div id="clues"><div class="muted">هنوز سرنخی ثبت نشده است.</div></div>
+        </div>
+        <div class="side-block">
+          <div class="side-title">🗒️ انتخاب‌های تو</div>
+          <div id="history" class="muted">هنوز انتخابی انجام نداده‌ای.</div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+<script src="app.js"></script>
+
+</body>
+</html>
